@@ -80,7 +80,7 @@ class NetworkService {
     }
     
     /// Fetch and decode JSON data
-    func fetchData<T: Decodable>(client: EndpointProtocol, type: T.Type) async throws -> T {
+    func fetchData<T: Decodable>(client: EndpointProtocol) async throws -> T {
         let data = try await fetchRequest(client: client)
         let jsonDecoder = JSONDecoder()
         
