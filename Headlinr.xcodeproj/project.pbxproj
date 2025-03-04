@@ -29,12 +29,30 @@
 		DE16E4B12D73C5210006BC8C /* HeadlinrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeadlinrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		DE16E4982D73C5200006BC8C /* Headlinr */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Headlinr;
-			sourceTree = "<group>";
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		DE16E5002D73D96E0006BC8C /* Exceptions for "Headlinr" folder in "Headlinr" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Assets.xcassets,
+				ContentView.swift,
+				HeadlinrApp.swift,
+				"Preview Content/Preview Assets.xcassets",
+			);
+			target = DE16E4952D73C5200006BC8C /* Headlinr */;
 		};
+		DE16E5012D73D96E0006BC8C /* Exceptions for "Headlinr" folder in "HeadlinrTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Assets.xcassets,
+				ContentView.swift,
+				HeadlinrApp.swift,
+				"Preview Content/Preview Assets.xcassets",
+			);
+			target = DE16E4A62D73C5210006BC8C /* HeadlinrTests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
 		DE16E4AA2D73C5210006BC8C /* HeadlinrTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = HeadlinrTests;
@@ -43,6 +61,15 @@
 		DE16E4B42D73C5210006BC8C /* HeadlinrUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = HeadlinrUITests;
+			sourceTree = "<group>";
+		};
+		DE16E4FB2D73D96E0006BC8C /* Headlinr */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				DE16E5002D73D96E0006BC8C /* Exceptions for "Headlinr" folder in "Headlinr" target */,
+				DE16E5012D73D96E0006BC8C /* Exceptions for "Headlinr" folder in "HeadlinrTests" target */,
+			);
+			path = Headlinr;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,7 +102,7 @@
 		DE16E48D2D73C5200006BC8C = {
 			isa = PBXGroup;
 			children = (
-				DE16E4982D73C5200006BC8C /* Headlinr */,
+				DE16E4FB2D73D96E0006BC8C /* Headlinr */,
 				DE16E4AA2D73C5210006BC8C /* HeadlinrTests */,
 				DE16E4B42D73C5210006BC8C /* HeadlinrUITests */,
 				DE16E4972D73C5200006BC8C /* Products */,
@@ -107,9 +134,6 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				DE16E4982D73C5200006BC8C /* Headlinr */,
-			);
 			name = Headlinr;
 			packageProductDependencies = (
 			);
@@ -132,6 +156,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				DE16E4AA2D73C5210006BC8C /* HeadlinrTests */,
+				DE16E4FB2D73D96E0006BC8C /* Headlinr */,
 			);
 			name = HeadlinrTests;
 			packageProductDependencies = (

@@ -3,22 +3,23 @@
 //  Headlinr
 //
 //  Created by Maisie Ng on 3/1/25.
-//
 
 import SwiftUI
+import Foundation
+
 
 struct ContentView: View {
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+
+        VStack{
+            Text("Hello World!")
         }
-        .padding()
     }
 }
-
 #Preview {
     ContentView()
 }
+
+
+
