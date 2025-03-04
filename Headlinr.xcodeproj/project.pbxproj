@@ -34,9 +34,15 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Assets.xcassets,
-				ContentView.swift,
 				HeadlinrApp.swift,
+				Model/Article.swift,
+				Networking/APIService.swift,
+				Networking/EndpointProtocol.swift,
+				Networking/NewsEndpoint.swift,
 				"Preview Content/Preview Assets.xcassets",
+				"View Model/ArticleViewModel.swift",
+				View/ContentView.swift,
+				View/NewsRowView.swift,
 			);
 			target = DE16E4952D73C5200006BC8C /* Headlinr */;
 		};
@@ -44,9 +50,9 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Assets.xcassets,
-				ContentView.swift,
 				HeadlinrApp.swift,
 				"Preview Content/Preview Assets.xcassets",
+				View/ContentView.swift,
 			);
 			target = DE16E4A62D73C5210006BC8C /* HeadlinrTests */;
 		};
