@@ -8,9 +8,13 @@
 
 import SwiftUI
 import Kingfisher
+import SafariServices
+
 
 struct NewsDetailView: View {
     let article: Article
+    @State private var showWebView = false
+
     
     var body: some View {
         
@@ -45,13 +49,34 @@ struct NewsDetailView: View {
             Text(article.content ?? "")
                 .font(.callout)
             
+            if let url = URL(string: article.url) {
+              Button(action: {
+                  showWebView = true  // Show in-app browser
+              }) {
+                  Text("Continue reading")
+                      .font(.subheadline)
+                      .fontWeight(.semibold)
+                      .foregroundColor(.white)
+                      .frame(maxWidth: .infinity)
+                      .padding(.all,12)
+                      .background(Color.blue.opacity(0.9))
+                      .cornerRadius(12)
+                  
+              }
+              .padding(.top, 10)
+              .sheet(isPresented: $showWebView) {
+                  // Opens in-app Safari
+                  SafariView(url: url)
+              }
+          }
+
+            
             Spacer()
             
         }
         .padding(.all,12)
-
-        
-        
     }
 }
+
+
 
