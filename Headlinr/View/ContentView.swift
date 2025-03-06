@@ -15,10 +15,10 @@ struct ContentView: View {
     @State private var showSearchView = false
     
     var filteredArticles: [Article] {
-        guard let articles = viewModel.articles else { return [] } // Prevents nil crash
+        guard let articles = viewModel.articles else { return [] }
 
         if searchText.isEmpty {
-            return articles  // Use `articles` instead of force unwrapping
+            return articles
         } else {
             return articles.filter { article in
                 article.title.lowercased().contains(searchText.lowercased()) ||
@@ -48,7 +48,6 @@ struct ContentView: View {
                     CustomSearchBar(searchText: $searchText)
                     
               
-                    
                     ScrollView {
                         VStack(spacing: 12) {
                             ForEach(filteredArticles) { article in
