@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 
 struct NewsRowView: View {
@@ -14,13 +15,16 @@ struct NewsRowView: View {
     var body: some View {
      
         HStack(spacing: 12) {
-            articleImageView
-                .frame(width: 100, height: 100)
-                .cornerRadius(8)
-                .padding(.vertical, 8)
-                .padding(.leading, 12)
+        
             
-            // Content section
+            KFImage(URL(string: article.urlToImage ?? ""))
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 100, height: 100)
+                .clipped()
+                .cornerRadius(8)
+             
+            
             
                 VStack(alignment: .leading, spacing: 8) {
                     titleView
