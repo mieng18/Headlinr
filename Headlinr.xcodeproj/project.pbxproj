@@ -38,13 +38,14 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Assets.xcassets,
+				Components/SafariView.swift,
 				HeadlinrApp.swift,
 				Model/Article.swift,
 				Networking/APIService.swift,
 				Networking/EndpointProtocol.swift,
 				Networking/NewsEndpoint.swift,
 				"Preview Content/Preview Assets.xcassets",
-				"View Model/ArticleViewModel.swift",
+				View/ArticleViewModel.swift,
 				View/ContentView.swift,
 				View/NewsDetailView.swift,
 				View/NewsRowView.swift,
