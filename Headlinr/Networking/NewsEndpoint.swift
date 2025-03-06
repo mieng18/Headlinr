@@ -28,7 +28,7 @@ extension NewsEndpoint: EndpointProtocol {
         switch self {
         case .search(let country):
             queryItems.append(URLQueryItem(name: "country", value: country))
-            queryItems.append(URLQueryItem(name: "apiKey",value: ""))
+            queryItems.append(URLQueryItem(name: "apiKey",value: "77fb5ec5a30c46f0a5641551dbc0ffa0"))
         }
         return queryItems
     }
