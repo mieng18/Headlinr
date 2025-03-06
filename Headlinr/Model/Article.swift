@@ -17,7 +17,8 @@ struct APIResponse: Codable {
 }
 
 // MARK: - Article Model
-struct Article: Codable,Hashable {
+struct Article: Codable,Identifiable {
+    let id = UUID()  // Assigns a unique ID to each article
     let source: Source
     let author: String?
     let title: String
@@ -29,7 +30,7 @@ struct Article: Codable,Hashable {
 }
 
 // MARK: - Source Model
-struct Source: Codable,Hashable {
+struct Source: Codable,Hashable,Identifiable {
     let id: String?
     let name: String
 }

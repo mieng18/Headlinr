@@ -47,6 +47,7 @@
 				"Preview Content/Preview Assets.xcassets",
 				View/ArticleViewModel.swift,
 				View/ContentView.swift,
+				View/CustomSearchBarView.swift,
 				View/NewsDetailView.swift,
 				View/NewsRowView.swift,
 			);

@@ -10,6 +10,22 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject var viewModel = ArticleViewModel()
+    @State private var searchText = ""
+    @State private var isSearching = false
+    @State private var showSearchView = false
+    
+    var filteredArticles: [Article] {
+        guard let articles = viewModel.articles else { return [] } // Prevents nil crash
+
+        if searchText.isEmpty {
+            return articles  // Use `articles` instead of force unwrapping
+        } else {
+            return articles.filter { article in
+                article.title.lowercased().contains(searchText.lowercased()) ||
+                (article.description ?? "").lowercased().contains(searchText.lowercased())
+            }
+        }
+    }
 
     var body: some View {
 
@@ -18,28 +34,31 @@ struct ContentView: View {
             ZStack{
                 
                 VStack(spacing:0) {
-                   HStack {
-                       Image("Headlinr-clear")
-                           .resizable()
-                           .aspectRatio(contentMode: .fill)
-                           .frame(width: 120, height: 40)
-                           .padding(.leading,12)
-                       
-                       Spacer()
-                   }
+                    HStack {
+                        Image("Headlinr-clear")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 120, height: 40)
+                            .padding(.leading,12)
+                        
+                        Spacer()
+                        
+                    }
+                    
+                    CustomSearchBar(searchText: $searchText)
+                    
+              
                     
                     ScrollView {
-                        VStack{
-                            if let articles = viewModel.articles {
-                                ForEach(articles,id:\.self) { article in
-                                    
-                                    NavigationLink(destination: NewsDetailView(article: article)) {
-                                        NewsRowView(article: article)
+                        VStack(spacing: 12) {
+                            ForEach(filteredArticles) { article in
+                                NavigationLink(destination: NewsDetailView(article: article)) {
+                                     NewsRowView(article: article)
+                                 }
+                                 .buttonStyle(PlainButtonStyle())
+                             }
+                         }
 
-                                    }
-                                }
-                            }
-                        }
                         .onAppear {
                             Task {
                                 do {
@@ -57,10 +76,12 @@ struct ContentView: View {
             }
         }
     }
+    
+    
+    
 }
 #Preview {
     ContentView()
 }
-
 
 
