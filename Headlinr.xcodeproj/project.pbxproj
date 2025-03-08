@@ -38,6 +38,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Assets.xcassets,
+				Components/CustomTabBarView.swift,
 				Components/SafariView.swift,
 				HeadlinrApp.swift,
 				Model/Article.swift,
@@ -45,10 +46,14 @@
 				Networking/EndpointProtocol.swift,
 				Networking/NewsEndpoint.swift,
 				"Preview Content/Preview Assets.xcassets",
-				View/ArticleViewModel.swift,
-				View/ContentView.swift,
+				View/BookmarksView.swift,
+				View/CustomSearchBarView.swift,
+				View/Home.swift,
 				View/NewsDetailView.swift,
 				View/NewsRowView.swift,
+				View/ProfileView.swift,
+				ViewModel/ArticleViewModel.swift,
+				ViewModel/BookmarksViewModel.swift,
 			);
 			target = DE16E4952D73C5200006BC8C /* Headlinr */;
 		};
@@ -58,7 +63,7 @@
 				Assets.xcassets,
 				HeadlinrApp.swift,
 				"Preview Content/Preview Assets.xcassets",
-				View/ContentView.swift,
+				View/Home.swift,
 			);
 			target = DE16E4A62D73C5210006BC8C /* HeadlinrTests */;
 		};
@@ -456,7 +461,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
@@ -495,7 +500,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.2;

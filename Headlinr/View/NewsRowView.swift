@@ -11,12 +11,12 @@ import Kingfisher
 
 struct NewsRowView: View {
     let article: Article
+    @ObservedObject var viewModel: ArticleViewModel
     
     var body: some View {
      
         HStack(spacing: 12) {
         
-            
             KFImage(URL(string: article.urlToImage ?? ""))
                 .resizable()
                 .aspectRatio(contentMode: .fill)
@@ -24,8 +24,6 @@ struct NewsRowView: View {
                 .clipped()
                 .cornerRadius(8)
              
-            
-            
                 VStack(alignment: .leading, spacing: 8) {
                     titleView
                     descriptionView
@@ -33,6 +31,17 @@ struct NewsRowView: View {
                 
                 .padding(.vertical, 12)
                 .padding(.trailing, 12)
+            
+              Button(action: {
+                  if viewModel.savedArticles.contains(where: { $0.id == article.id }) {
+                      viewModel.removeArticle(article)
+                  } else {
+                      viewModel.saveArticle(article)
+                  }
+              }) {
+                  Image(systemName: viewModel.savedArticles.contains(where: { $0.id == article.id }) ? "bookmark.fill" : "bookmark")
+                      .foregroundColor(.black)
+              }
            
         }
         .background(Color(.systemBackground))
