@@ -53,6 +53,7 @@
 				View/NewsRowView.swift,
 				View/ProfileView.swift,
 				ViewModel/ArticleViewModel.swift,
+				ViewModel/BookmarksViewModel.swift,
 			);
 			target = DE16E4952D73C5200006BC8C /* Headlinr */;
 		};
