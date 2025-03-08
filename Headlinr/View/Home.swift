@@ -7,7 +7,7 @@
 import SwiftUI
 
 
-struct ContentView: View {
+struct Home: View {
     
     @ObservedObject var viewModel = ArticleViewModel()
     @State private var searchText = ""
@@ -47,17 +47,16 @@ struct ContentView: View {
                     
                     CustomSearchBar(searchText: $searchText)
                     
-              
                     ScrollView {
                         VStack(spacing: 12) {
                             ForEach(filteredArticles) { article in
                                 NavigationLink(destination: NewsDetailView(article: article)) {
-                                     NewsRowView(article: article)
+                                    NewsRowView(article: article, viewModel: viewModel)
                                  }
                                  .buttonStyle(PlainButtonStyle())
                              }
                          }
-
+                  
                         .onAppear {
                             Task {
                                 do {
@@ -80,7 +79,7 @@ struct ContentView: View {
     
 }
 #Preview {
-    ContentView()
+    Home()
 }
 
 

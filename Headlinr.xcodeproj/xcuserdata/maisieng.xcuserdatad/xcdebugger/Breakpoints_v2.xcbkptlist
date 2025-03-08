@@ -32,8 +32,82 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
             endingLineNumber = "20"
-            landmarkName = "fetchArticles()"
+            landmarkName = "ArticleViewModel"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9F002D67-4FAE-405E-B8B6-DF4D7579B797"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Headlinr/View/ArticleViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "refreshArticles()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9F002D67-4FAE-405E-B8B6-DF4D7579B797 - 5df7a53cc4f4cf5d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Headlinr.ArticleViewModel.refreshArticles() async -&gt; ()"
+                  moduleName = "Headlinr.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maisieng/Desktop/Headlinr/Headlinr/View/ArticleViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67">
+               </Location>
+               <Location
+                  uuid = "9F002D67-4FAE-405E-B8B6-DF4D7579B797 - a1722fb9f795f06a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for Headlinr.ArticleViewModel.refreshArticles() async -&gt; ()"
+                  moduleName = "Headlinr.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maisieng/Desktop/Headlinr/Headlinr/View/ArticleViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67">
+               </Location>
+               <Location
+                  uuid = "9F002D67-4FAE-405E-B8B6-DF4D7579B797 - 68219275ea67895b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Headlinr.ArticleViewModel.refreshArticles() async -&gt; ()"
+                  moduleName = "Headlinr.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maisieng/Desktop/Headlinr/Headlinr/View/ArticleViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67">
+               </Location>
+               <Location
+                  uuid = "9F002D67-4FAE-405E-B8B6-DF4D7579B797 - 61b8e50a60d9d45a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for Headlinr.ArticleViewModel.refreshArticles() async -&gt; ()"
+                  moduleName = "Headlinr.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maisieng/Desktop/Headlinr/Headlinr/View/ArticleViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
