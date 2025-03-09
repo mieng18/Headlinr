@@ -35,10 +35,16 @@ struct Home: View {
                     }
                     
                     CustomSearchBar(searchText: $searchText)
-                    
-                    TopHeadlinesView()
-                    
-                    Spacer()
+                    ScrollView {
+                        VStack{
+                            
+                            TopHeadlinesView()
+                            
+                            Spacer()
+                            
+                            
+                        }
+                    }
                 }
             }
             
