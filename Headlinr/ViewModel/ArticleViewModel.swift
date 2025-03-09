@@ -15,7 +15,6 @@ import Combine
     @Published var isLoading: Bool = false
     @Published var showError: Bool = false
     @Published var errorMessage: String = ""
-    @Published var savedArticles: [Article] = [] // Stores saved articles
     let savedKey = "SavedArticles"
     
 
@@ -23,37 +22,11 @@ import Combine
     private let  networkService = NetworkService.shared
     
     init() {
-        loadSavedArticles()
     }
     
-    func saveArticle(_ article: Article) {
-          if !savedArticles.contains(where: { $0.url == article.url }) {
-              savedArticles.append(article)
-              saveToUserDefaults()
-          }
-      }
-    
-    func removeArticle(_ article: Article) {
-        savedArticles.removeAll { $0.url == article.url }
-         saveToUserDefaults()
-     }
 
-    private func saveToUserDefaults() {
-          if let encoded = try? JSONEncoder().encode(savedArticles) {
-              UserDefaults.standard.set(encoded, forKey: savedKey)
-          }
-      }
-
-      // Load saved articles from UserDefaults
-      private func loadSavedArticles() {
-          if let savedData = UserDefaults.standard.data(forKey: savedKey),
-             let decoded = try? JSONDecoder().decode([Article].self, from: savedData) {
-              savedArticles = decoded
-          }
-      }
-     
     func fetchArticles() async throws {
-        let articlesResponses: APIResponse = try await networkService.fetchData(client: NewsEndpoint.search(value: "us"))
+        let articlesResponses: APIResponse = try await networkService.fetchData(client: NewsEndpoint.topHeadlines(country: "us"))
         
         self.articles = articlesResponses.articles
     }

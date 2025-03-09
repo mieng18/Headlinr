@@ -10,6 +10,8 @@ import SwiftUI
 struct Home: View {
     
     @ObservedObject var viewModel = ArticleViewModel()
+    @StateObject var bookmarkViewModel = BookmarkViewModel() // ✅ Shared for saving
+
     @State private var searchText = ""
     @State private var isSearching = false
     @State private var showSearchView = false
@@ -51,7 +53,7 @@ struct Home: View {
                         VStack(spacing: 12) {
                             ForEach(filteredArticles) { article in
                                 NavigationLink(destination: NewsDetailView(article: article)) {
-                                    NewsRowView(article: article, viewModel: viewModel)
+                                    NewsRowView(article: article, bookmarkViewModel: bookmarkViewModel)
                                  }
                                  .buttonStyle(PlainButtonStyle())
                              }
