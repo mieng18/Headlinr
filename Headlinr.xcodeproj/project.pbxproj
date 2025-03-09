@@ -53,6 +53,7 @@
 				View/NewsDetailView.swift,
 				View/NewsRowView.swift,
 				View/ProfileView.swift,
+				View/TopHeadlinesView.swift,
 				ViewModel/ArticleViewModel.swift,
 				ViewModel/BookmarksViewModel.swift,
 			);

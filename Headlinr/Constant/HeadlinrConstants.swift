@@ -7,6 +7,7 @@
 
 
 import Foundation
+import UIKit
 
 
 struct HeadlinrConstants {
@@ -20,3 +21,9 @@ struct HeadlinrConstants {
           static let sources = "/v2/sources"
       }
   }
+
+
+struct Constants {
+    static let screenWidth = UIScreen.main.bounds.width
+    static let itemWidth = (screenWidth / 2) + 10
+}
