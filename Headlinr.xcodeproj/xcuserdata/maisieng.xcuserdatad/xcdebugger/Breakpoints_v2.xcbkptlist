@@ -110,5 +110,79 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "84265479-D9D6-4DDD-8AEB-7137E1AAF251"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Headlinr/View/TopHeadlinesView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
+            landmarkName = "filteredArticles"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "84265479-D9D6-4DDD-8AEB-7137E1AAF251 - da64e4d9a97111c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Headlinr.TopheadlinesView.filteredArticles.getter : Swift.Array&lt;Headlinr.Article&gt;"
+                  moduleName = "Headlinr.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maisieng/Desktop/Headlinr/Headlinr/View/TopHeadlinesView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "169"
+                  endingLineNumber = "169">
+               </Location>
+               <Location
+                  uuid = "84265479-D9D6-4DDD-8AEB-7137E1AAF251 - 90e75aef4c44f3c0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Headlinr.Article) -&gt; Swift.Bool in Headlinr.TopheadlinesView.filteredArticles.getter : Swift.Array&lt;Headlinr.Article&gt;"
+                  moduleName = "Headlinr.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maisieng/Desktop/Headlinr/Headlinr/View/TopHeadlinesView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "169"
+                  endingLineNumber = "169">
+               </Location>
+               <Location
+                  uuid = "84265479-D9D6-4DDD-8AEB-7137E1AAF251 - da64e4d9a97111a8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Headlinr.TopheadlinesView.filteredArticles.getter : Swift.Array&lt;Headlinr.Article&gt;"
+                  moduleName = "Headlinr.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maisieng/Desktop/Headlinr/Headlinr/View/TopHeadlinesView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "170"
+                  endingLineNumber = "170">
+               </Location>
+               <Location
+                  uuid = "84265479-D9D6-4DDD-8AEB-7137E1AAF251 - 90e75aef4c44f3a1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Headlinr.Article) -&gt; Swift.Bool in Headlinr.TopheadlinesView.filteredArticles.getter : Swift.Array&lt;Headlinr.Article&gt;"
+                  moduleName = "Headlinr.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maisieng/Desktop/Headlinr/Headlinr/View/TopHeadlinesView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "170"
+                  endingLineNumber = "170">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

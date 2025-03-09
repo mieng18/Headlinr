@@ -42,7 +42,7 @@ struct ContentView: View {
                     
                 } else {
                     TabView(selection: $activeTab) {
-                        ContentView()
+                        Home()
                             .tag(TabItem.home)
                            
                         BookmarkView()

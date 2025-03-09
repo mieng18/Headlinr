@@ -41,7 +41,7 @@ struct TopHeadlinesView: View {
                         .background(
                             Capsule()
                                 .stroke(lineWidth: 1.5)
-                                .foregroundColor(.gray.opacity(0.2))// Set Capsule color
+                                .foregroundColor(.gray.opacity(0.2))
                         )
                 }
             }
@@ -50,7 +50,9 @@ struct TopHeadlinesView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 16) {
                     ForEach(filteredArticles.prefix(10)) { article in
-                        BreakingNewsCardView(article: article)
+                        NavigationLink(destination: NewsDetailView(article: article)) {
+                            TopHeadlineCardView(article: article)
+                        }
                     }
                     .background(.white)
                 }
@@ -79,10 +81,12 @@ struct TopHeadlinesView: View {
 #Preview {
     TopHeadlinesView()
 }
-struct BreakingNewsCardView: View {
+struct TopHeadlineCardView: View {
     let article: Article
 
     var body: some View {
+        
+        
         VStack(spacing: 8) {
   
             
@@ -93,12 +97,12 @@ struct BreakingNewsCardView: View {
                 .clipped()
                 .cornerRadius(10)
             
-            VStack(alignment: .leading) {
-                Text(article.title)
-                    .font(.headline)
-                    .lineLimit(2)
-            }
-            
+            Text(article.title)
+                .foregroundColor(.black)
+                .font(.headline)
+                .lineLimit(2)
+                .multilineTextAlignment(.leading)
+
             HStack{
                 
                 Text(article.source.name ?? "Unknown Source")
@@ -123,11 +127,7 @@ struct BreakingNewsCardView: View {
         .frame(width: Constants.itemWidth, height: 230)
         .background(Color.white)
         .cornerRadius(12)
-        .onTapGesture {
-            if let url = URL(string: article.url) {
-                UIApplication.shared.open(url)
-            }
-        }
+        
     }
 }
 extension String {
