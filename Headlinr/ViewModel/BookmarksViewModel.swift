@@ -8,7 +8,7 @@ import SwiftUI
 
 
 class BookmarkViewModel: ObservableObject {
-    @Published var articles: [Article] = []
+    @Published var savedArticles: [Article] = []
     @Published var isLoading = false
     @Published var isError = false
     @Published var error: String = ""
@@ -16,29 +16,28 @@ class BookmarkViewModel: ObservableObject {
     init() {
         loadSavedArticles()
     }
-
   
     private func loadSavedArticles() {
         if let savedData = UserDefaults.standard.data(forKey: "SavedArticles"),
            let decoded = try? JSONDecoder().decode([Article].self, from: savedData) {
-            self.articles = decoded
+            self.savedArticles = decoded
         }
     }
 
     func saveArticle(_ article: Article) {
-        if !articles.contains(where: { $0.id == article.id }) {
-            articles.append(article)
+        if !savedArticles.contains(where: { $0.id == article.id }) {
+            savedArticles.append(article)
             saveToUserDefaults()
         }
     }
 
     func removeArticle(_ article: Article) {
-        articles.removeAll { $0.id == article.id }
+        savedArticles.removeAll { $0.id == article.id }
         saveToUserDefaults()
     }
 
     private func saveToUserDefaults() {
-        if let encoded = try? JSONEncoder().encode(articles) {
+        if let encoded = try? JSONEncoder().encode(savedArticles) {
             UserDefaults.standard.set(encoded, forKey: "SavedArticles")
         }
     }

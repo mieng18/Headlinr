@@ -11,7 +11,8 @@ import Kingfisher
 
 struct NewsRowView: View {
     let article: Article
-    @ObservedObject var viewModel: ArticleViewModel
+    @ObservedObject var bookmarkViewModel = BookmarkViewModel() 
+
     
     var body: some View {
      
@@ -33,15 +34,16 @@ struct NewsRowView: View {
                 .padding(.trailing, 12)
             
               Button(action: {
-                  if viewModel.savedArticles.contains(where: { $0.id == article.id }) {
-                      viewModel.removeArticle(article)
+                  if bookmarkViewModel.savedArticles.contains(where: { $0.id == article.id }) {
+                      bookmarkViewModel.removeArticle(article)
                   } else {
-                      viewModel.saveArticle(article)
+                      bookmarkViewModel.saveArticle(article)
                   }
               }) {
-                  Image(systemName: viewModel.savedArticles.contains(where: { $0.id == article.id }) ? "bookmark.fill" : "bookmark")
+                  Image(systemName: bookmarkViewModel.savedArticles.contains(where: { $0.id == article.id }) ? "bookmark.fill" : "bookmark")
                       .foregroundColor(.black)
               }
+              .padding(.trailing,12)
            
         }
         .background(Color(.systemBackground))
