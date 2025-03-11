@@ -11,19 +11,19 @@ import Kingfisher
 
 
 struct TopHeadlinesView: View {
-    @StateObject var viewModel = ArticleViewModel()
+    @StateObject var viewModel = SpotlightViewModel()
     
     @State private var showMore = false
 
     
-    var filteredArticles: [Article] {
-          guard let articles = viewModel.articles else { return [] }
-  
-          return articles
-      }
-  
+//    var filteredArticles: [Article] {
+//          guard let articles = viewModel.articles else { return [] }
+//  
+//          return articles
+//      }
+//  
     var body: some View {
-            // Title & "View More" Button
+        
         VStack(spacing: 0) {
             HStack {
                 Text("Today’s Spotlight")
@@ -32,7 +32,7 @@ struct TopHeadlinesView: View {
 
                 Spacer()
 
-                NavigationLink(destination: TopheadlinesView()) {
+                NavigationLink(destination: TopHeadlinesListView()) {
                     Text("See all")
                         .font(.subheadline)
                         .foregroundColor(.black)
@@ -49,7 +49,7 @@ struct TopHeadlinesView: View {
 
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 16) {
-                    ForEach(filteredArticles.prefix(10)) { article in
+                    ForEach(viewModel.articles.prefix(10)) { article in
                         NavigationLink(destination: NewsDetailView(article: article)) {
                             TopHeadlineCardView(article: article)
                         }
@@ -60,12 +60,16 @@ struct TopHeadlinesView: View {
                 
             }
             .frame(height: 250)
+            
+                
         }
         
         .onAppear {
             Task {
                 do  {
-                    try await viewModel.fetchArticles()
+                    try await viewModel.fetchSpotlightArticles()
+
+                    
                     
                 } catch {
                     
@@ -81,6 +85,8 @@ struct TopHeadlinesView: View {
 #Preview {
     TopHeadlinesView()
 }
+
+
 struct TopHeadlineCardView: View {
     let article: Article
 
@@ -151,9 +157,9 @@ extension String {
 }
 
 
-struct TopheadlinesView: View {
+struct TopHeadlinesListView: View {
     
-    @ObservedObject var viewModel = ArticleViewModel()
+    @ObservedObject var viewModel =  SpotlightViewModel()
     @StateObject var bookmarkViewModel = BookmarkViewModel()
     @State private var searchText = ""
     @State private var isSearching = false
@@ -161,12 +167,11 @@ struct TopheadlinesView: View {
     
     
     var filteredArticles: [Article] {
-        guard let articles = viewModel.articles else { return [] }
 
         if searchText.isEmpty {
-            return articles
+            return viewModel.articles
         } else {
-            return articles.filter { article in
+            return viewModel.articles.filter { article in
                 article.title.lowercased().contains(searchText.lowercased()) ||
                 (article.description ?? "").lowercased().contains(searchText.lowercased())
             }
@@ -175,9 +180,8 @@ struct TopheadlinesView: View {
 
     
     var body: some View {
-        NavigationStack {
             
-            ScrollView {
+    
                 VStack(spacing: 12) {
                     ForEach(filteredArticles) { article in
                         NavigationLink(destination: NewsDetailView(article: article)) {
@@ -190,15 +194,47 @@ struct TopheadlinesView: View {
                 .onAppear {
                     Task {
                         do {
-                            try await viewModel.fetchArticles()
+                            try await viewModel.fetchSpotlightArticles()
                             
                         } catch {
                             print("Can not fetchg aritcles")
                         }
                     }
                 }
+        }
+}
+
+
+struct ListView: View {
+    
+    @ObservedObject var viewModel = NewsViewModel()
+    @StateObject var bookmarkViewModel = BookmarkViewModel()
+
+
+    var body: some View {
+        
+    
+        VStack(spacing: 12) {
+            ForEach(viewModel.articles) { article in
+                NavigationLink(destination: NewsDetailView(article: article)) {
+                        NewsRowView(article: article, bookmarkViewModel: bookmarkViewModel)
+                    
+                }
+                .buttonStyle(PlainButtonStyle())
             }
         }
-        
+        .onAppear {
+            Task {
+                do {
+                    try await viewModel.fetchNewsArticles()
+
+                } catch {
+                    print("Can not fetch")
+                }
+            }
+        }
     }
 }
+
+
+

@@ -46,6 +46,7 @@ class NetworkService {
     
     private init() {}
     
+
     func fetchRequest(client: EndpointProtocol) async throws -> Data {
         guard let request = client.request else {
             throw NetworkError.invalidRequest

@@ -8,12 +8,14 @@
 
 import Foundation
 
-enum NewsEndpoint{
-    case topHeadlines(country: String)
+
+enum NewsEndpoint {
+    
+    case topHeadlines(country: String, page: Int, pageSize: Int)
     case everything(query: String, page: Int, pageSize: Int)
     case categoryNews(category: String, country: String)
-    
 }
+
 
 extension NewsEndpoint: EndpointProtocol {
 
@@ -35,9 +37,11 @@ extension NewsEndpoint: EndpointProtocol {
 
     var parameter:  [URLQueryItem] {
         switch self {
-        case .topHeadlines(let country):
+        case .topHeadlines(let country, let page,let pageSize):
             return [
                 URLQueryItem(name: "country", value: country),
+                URLQueryItem(name: "page", value: "\(page)"),
+                URLQueryItem(name: "pageSize", value: "\(pageSize)"),
                 URLQueryItem(name: "apiKey", value: HeadlinrConstants.apiKey)
             ]
 
