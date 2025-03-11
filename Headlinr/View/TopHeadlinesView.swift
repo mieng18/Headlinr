@@ -52,6 +52,7 @@ struct TopHeadlinesView: View {
                     ForEach(viewModel.articles.prefix(10)) { article in
                         NavigationLink(destination: NewsDetailView(article: article)) {
                             TopHeadlineCardView(article: article)
+                             
                         }
                     }
                     .background(.white)
@@ -181,27 +182,32 @@ struct TopHeadlinesListView: View {
     
     var body: some View {
             
-    
-                VStack(spacing: 12) {
-                    ForEach(filteredArticles) { article in
-                        NavigationLink(destination: NewsDetailView(article: article)) {
-                            NewsRowView(article: article, bookmarkViewModel: bookmarkViewModel)
-                        }
-                        .buttonStyle(PlainButtonStyle())
+        ScrollView{
+        
+            VStack(spacing: 12) {
+                ForEach(filteredArticles) { article in
+                    NavigationLink(destination: NewsDetailView(article: article)) {
+                        NewsRowView(article: article, bookmarkViewModel: bookmarkViewModel)
+                            .onAppear {
+                               viewModel.loadMoreSpotlightIfNeeded(currentArticle: article)
+                           }
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                }
+            }
+            
+            .onAppear {
+                Task {
+                    do {
+                        try await viewModel.fetchSpotlightArticles()
+                        
+                    } catch {
+                        print("Can not fetch aritcles")
                     }
                 }
-                
-                .onAppear {
-                    Task {
-                        do {
-                            try await viewModel.fetchSpotlightArticles()
-                            
-                        } catch {
-                            print("Can not fetchg aritcles")
-                        }
-                    }
-                }
+            }
         }
+    }
 }
 
 
