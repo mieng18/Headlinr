@@ -54,9 +54,9 @@
 				View/NewsRowView.swift,
 				View/ProfileView.swift,
 				View/TopHeadlinesView.swift,
-				ViewModel/ArticleViewModel.swift,
 				ViewModel/BookmarksViewModel.swift,
 				ViewModel/NewsViewModel.swift,
+				ViewModel/SpotlightViewModel.swift,
 			);
 			target = DE16E4952D73C5200006BC8C /* Headlinr */;
 		};
