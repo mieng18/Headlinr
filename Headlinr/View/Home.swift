@@ -10,7 +10,7 @@ import Kingfisher
 
 struct Home: View {
     
-    @ObservedObject var viewModel = ArticleViewModel()
+    @StateObject var viewModel = NewsViewModel()
     @StateObject var bookmarkViewModel = BookmarkViewModel()
     @State private var searchText = ""
     @State private var isSearching = false
@@ -40,11 +40,12 @@ struct Home: View {
                             
                             TopHeadlinesView()
                             
-                            Spacer()
+                        
                             
-                            
+                            ListView()
                         }
                     }
+                    
                 }
             }
             
