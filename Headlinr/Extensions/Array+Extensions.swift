@@ -1,0 +1,17 @@
+//
+//  View+Extensions.swift
+//  Headlinr
+//
+//  Created by Maisie Ng on 3/14/25.
+//
+
+import UIKit
+
+
+extension Array {
+    func chunked(into size: Int) -> [[Element]] {
+        stride(from: 0, to: self.count, by: size).map {
+            Array(self[$0..<Swift.min($0 + size, self.count)])
+        }
+    }
+}
