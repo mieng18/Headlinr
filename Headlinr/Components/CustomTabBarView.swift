@@ -11,6 +11,7 @@ import SwiftUI
 
 enum TabItem: String, CaseIterable {
     case home
+    case discovery
     case bookmarks
     case profile
 
@@ -18,6 +19,8 @@ enum TabItem: String, CaseIterable {
         switch self {
         case .home:
             return "house.fill"
+        case .discovery:
+            return "bookmark.fill"
         case .bookmarks:
             return "bookmark.fill"
         case .profile:
@@ -29,6 +32,8 @@ enum TabItem: String, CaseIterable {
         switch self {
         case .home:
             return "Home"
+        case .discovery:
+            return "Explore"
         case .bookmarks:
             return "Bookmarks"
         case .profile:
