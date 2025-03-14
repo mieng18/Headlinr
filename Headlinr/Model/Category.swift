@@ -8,9 +8,10 @@
 
 import SwiftUI
 
+
+
 enum Category: String, CaseIterable {
     case allTitles = "All"
-    case entertainment = "Entertainment"
     case business = "Business"
     case food = "Food"
     case health = "Health"
@@ -26,11 +27,12 @@ enum Category: String, CaseIterable {
     case travel = "Travel"
     case cars = "Cars"
     case outdoors = "Outdoors"
+    case entertainment = "Entertainment"
+
 
     var icon: String {
         switch self {
         case .allTitles: return "square.grid.2x2.fill"
-        case .entertainment: return "tv.fill"
         case .business: return "briefcase.fill"
         case .food: return "fork.knife"
         case .health: return "stethoscope"
@@ -46,9 +48,13 @@ enum Category: String, CaseIterable {
         case .travel: return "airplane"
         case .cars: return "car.fill"
         case .outdoors: return "tree.fill"
+        case .entertainment: return "tv.fill"
+
        
         }
     }
+    
+    
 }
 
 
