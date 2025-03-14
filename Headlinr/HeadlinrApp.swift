@@ -31,6 +31,10 @@ struct ContentView: View {
                             Home()
                         }
                         
+                        Tab.init(value: .discovery){
+                            DiscoveryView()
+                        }
+                        
                         Tab.init(value: .bookmarks) {
                             BookmarkView()
                         }

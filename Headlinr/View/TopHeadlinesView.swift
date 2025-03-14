@@ -199,6 +199,8 @@ struct TopHeadlinesListView: View {
             .onAppear {
                 Task {
                     do {
+                        
+                        
                         try await viewModel.fetchSpotlightArticles()
                         
                     } catch {
