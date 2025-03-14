@@ -41,6 +41,7 @@
 				Components/CustomTabBarView.swift,
 				Components/SafariView.swift,
 				Constant/HeadlinrConstants.swift,
+				"Extensions/Array+Extensions.swift",
 				HeadlinrApp.swift,
 				Model/Article.swift,
 				Model/Category.swift,
